@@ -17,6 +17,9 @@ def coaching(request):
 def riot_points(request):
     return render(request, 'shop/views/main/riot_points.html')
 
+def checkout(request):
+    return render (request, 'shop/views/main/checkout.html')
+
 def confirmacion(request):
     return render(request, 'shop/views/nav/confirmacion.html')
 
