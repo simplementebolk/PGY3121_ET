@@ -1,0 +1,58 @@
+{% extends 'shop/base.html' %}
+{% load static %}
+
+{% block title %}Accounts{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 class="my-4 text-white">League of Legends Accounts</h1>
+
+    <div class="row fluid mt-3">
+        {% for cuenta in cuentas_rankeadas %}
+        <div class="col-md-3 mb-3">
+            <div class="card">
+                {% if cuenta.image %}
+                    <img src="{{ cuenta.image.url }}" alt="{{ cuenta.name }}" class="card-img-top">
+                {% else %}
+                    <img src="{% static 'shop/img/default.jpg' %}" alt="{{ cuenta.name }}" class="card-img-top">
+                {% endif %}
+                <div class="card-body">
+                    <h5 class="card-title">{{ cuenta.name }}</h5>
+                    {% if cuenta.available %}
+                        <span class="badge rounded-pill text-bg-success">Available</span>
+                    {% else %}
+                        <span class="badge rounded-pill text-bg-danger">Not Available</span>
+                    {% endif %}
+                    <p class="card-text">{{ cuenta.description }}</p>
+                    <button type="button" class="btn btn-primary mb-2">${{ cuenta.price }}</button>
+                    <form action="{% url 'add_to_cart' cuenta.id %}" method="post">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#cartConfirmationModal">Add to cart</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<!-- Modal para mostrar mensaje de confirmación -->
+<div class="modal fade" id="cartConfirmationModal" tabindex="-1" aria-labelledby="cartConfirmationModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="cartConfirmationModalLabel">Item Added to Cart</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>The item has been added to your shopping cart.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <a href="{% url 'cart' %}" class="btn btn-primary">View Cart</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

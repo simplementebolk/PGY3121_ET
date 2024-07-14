@@ -1,0 +1,318 @@
+{% extends 'shop/base.html' %}
+{% load static %}
+
+{% block title %}Accounts{% endblock %}
+
+{% block content %}
+
+<div class="filters">
+  <div class="container-fluid">
+    <div class="row justify-content-center mb-4 mt-5">
+      <div class="col-lg-6 text-left text-white">
+        <h4 class="d-inline align-middle me-3">Account Region:</h4>
+        <div class="filter-buttons d-inline-flex align-items-center">
+          <a href="" class="btn btn-outline-primary me-2 selected-filter">NA</a>
+          <a href="" class="btn btn-outline-primary me-2">EUW</a>
+          <a href="" class="btn btn-outline-primary me-2">EUNE</a>
+          <a href="" class="btn btn-outline-primary me-2">LAN</a>
+          <a href="" class="btn btn-outline-primary me-2">LAS</a>
+          <a href="" class="btn btn-outline-primary me-2">BR</a>
+          <a href="" class="btn btn-outline-primary me-2">RU</a>
+          <a href="" class="btn btn-outline-primary me-2">TR</a>
+          <a href="" class="btn btn-outline-primary me-2">JP</a>
+          <a href="" class="btn btn-outline-primary me-2">KR</a>
+          <a href="" class="btn btn-outline-primary me-2">OCE</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="row justify-content-center mb-3 mr-2">
+      <div class="col-lg-6 text-left text-white">
+        <h4 class="d-inline align-middle me-3">Account Type:</h4>
+        <div class="filter-buttons d-inline-flex align-items-center">
+          <a href="" class="btn btn-outline-primary me-2 selected-filter">ALL</a>
+          <a href="" class="btn btn-outline-primary me-2">RANKED</a>
+          <a href="" class="btn btn-outline-primary me-2">FRESH</a>
+          <a href="" class="btn btn-outline-primary me-2">RP</a>
+        </div>
+      </div>
+    </div>
+</div>
+
+<!--FRESH ACCOUNTS-->
+
+<div class="accounts">
+  <div class="container">
+    <div class="row fluid mt-3">
+      <div class="col-md-3">
+        <div class="card">
+          <img src="{% static "shop/img/kayn-lol-odyssey-splash-art-uhdpaper.com-hd-280.jpg" %}" alt="" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title">+30k EA</h5>
+            <span class="badge rounded-pill text-bg-success">Available</span>
+            <p class="card-text">Fresh account with +30k EA</p>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              $1.5
+            </button>
+            
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Hand Leveled Account</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    How many accounts do you want to buy?
+                    <input type="number" name="my_number" class="form-control form-control-sm">
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Add to cart</button>
+                    <button type="button" class="btn btn-success ">Buy</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>        
+        </div> 
+      </div>
+
+      <div class="col-md-3">
+        <div class="card">
+          <img src="{% static "shop/img/galaxy-slayer-zed-lol-wild-rift-splash-art-hd-wallpaper-1920x1080-uhdpaper.com-582.1_a.jpg" %}" alt="" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title">+40K EA</h5>
+            <span class="badge rounded-pill text-bg-success">Available</span>
+            <p class="card-text">Fresh account with +40k EA</p>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              $3.0
+            </button>
+            
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Hand Leveled Account</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    How many accounts do you want to buy?
+                    <input type="number" name="my_number" class="form-control form-control-sm">
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Add to cart</button>
+                    <button type="button" class="btn btn-success ">Buy</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>        
+        </div> 
+      </div> 
+
+      <div class="col-md-3">
+        <div class="card">
+          <img src="{% static "shop/img/faerie-court-katarina-prestige-skin-lol-splash-art-hd-wallpaper-uhdpaper.com-29@1@k.jpg" %}" alt="" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title">+50K EA</h5>
+            <span class="badge rounded-pill text-bg-success">Available</span>
+            <p class="card-text">Fresh account with +50k EA</p>
+
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">$5.0</button>
+            
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Hand Leveled Account</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    How many accounts do you want to buy?
+                    <input type="number" name="my_number" class="form-control form-control-sm">
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Add to cart</button>
+                    <button type="button" class="btn btn-success ">Buy</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>        
+        </div> 
+      </div>
+
+      <div class="col-md-3">
+        <div class="card">
+          <img src="{% static "shop/img/janna-lol-sacred-sword-splash-art-uhdpaper.com-hd-391.jpg" %}" alt="" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title">Hand Level</h5>
+            <span class="badge rounded-pill text-bg-success">Available</span>
+            <p class="card-text">Hand leveled account</p>
+
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">$10.0</button>
+            
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Hand Leveled Account</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    How many accounts do you want to buy?
+                    <input type="number" name="my_number" class="form-control form-control-sm">
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Add to cart</button>
+                    <button type="button" class="btn btn-success ">Buy</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>        
+        </div> 
+      </div>
+    </div>
+
+    <!--Ranked Accounts-->
+
+    <div class="row fluid mt-3">
+      <div class="col-md-3">
+        <div class="card">
+          <img src="{% static "shop/img/emerald.png" %}" alt="" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title">Emerald Account FA</h5>
+            <span class="badge rounded-pill text-bg-success">Available</span>
+            <p class="card-text">Emerald Account FA</p>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">$10.0</button>
+            
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Emerald Account</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    How many accounts do you want to buy?
+                    <input type="number" name="my_number" class="form-control form-control-sm">
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Add to cart</button>
+                    <button type="button" class="btn btn-success ">Buy</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>        
+        </div> 
+      </div>
+
+      <div class="col-md-3">
+        <div class="card">
+          <img src="{% static "shop/img/diamond.png" %}" alt="" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title">Diamond Account</h5>
+            <span class="badge rounded-pill text-bg-success">Available</span>
+            <p class="card-text">Diamond Account FA</p>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">$25.0</button>
+            
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Diamond Account</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    How many accounts do you want to buy?
+                    <input type="number" name="my_number" class="form-control form-control-sm">
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Add to cart</button>
+                    <button type="button" class="btn btn-success ">Buy</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>        
+        </div> 
+      </div> 
+
+      <div class="col-md-3">
+        <div class="card">
+          <img src="{% static "shop/img/master.png" %}" alt="" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title">Master Account</h5>
+            <span class="badge rounded-pill text-bg-success">Available</span>
+            <p class="card-text">Master Account FA</p>
+
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">$40.0</button>
+            
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Master Account</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    How many accounts do you want to buy?
+                    <input type="number" name="my_number" class="form-control form-control-sm">
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Add to cart</button>
+                    <button type="button" class="btn btn-success ">Buy</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>        
+        </div> 
+      </div>
+
+      <div class="col-md-3">
+        <div class="card">
+          <img src="{% static "shop/img/grandmaster.png" %}" alt="" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title">Grand Master Account</h5>
+            <span class="badge rounded-pill text-bg-success">Available</span>
+            <p class="card-text">Grand Master Account FA</p>
+
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">$80.0</button>
+            
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Grand Master Account</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    How many accounts do you want to buy?
+                    <input type="number" name="my_number" class="form-control form-control-sm">
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Add to cart</button>
+                    <button type="button" class="btn btn-success ">Buy</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>        
+        </div> 
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

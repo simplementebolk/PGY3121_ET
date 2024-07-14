@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>{% block title %}RengarShop{% endblock %}</title>
+  {% load static %}
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Bootstrap CSS v5.2.1 -->
+  <link rel="stylesheet" href="{% static 'shop/css/style.css' %}" />
+  <link rel="icon" href="{% static 'shop/img/rengicon.jpg' %}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+  <script src="https://kit.fontawesome.com/825f119ee2.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+  <header>
+    <div class="topbar py-3 ">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-4 col-md-4 t700">
+            <ul class="nav justify-content-between">
+              <li><a class="text-decoration-none t-blanco" href="#"><i class="fa-regular fa-envelope"></i>
+                  rengshop@gmail.com</a></li>
+            </ul>
+          </div>
+  
+          <div class="col-lg-4 col-md-4">
+            <ul class="nav justify-content-center">
+              <li><a class="text-decoration-none px-3 t-blanco" href="#"><i class="fa-brands fa-facebook"></i></a></li>
+              <li><a class="text-decoration-none px-3 t-blanco" href="#"><i class="fa-brands fa-instagram"></i></a></li>
+              <li><a class="text-decoration-none px-3 t-blanco" href="#"><i class="fa-brands fa-twitter"></i></a></li>
+            </ul>
+          </div>
+  
+          <div class="col-lg-4 col-md-4">
+            <ul class="nav justify-content-end">
+              <li><a class="text-decoration-none px-3 t-blanco" href="#"><i class="fa-regular fa-user"></i> Welcome,
+                  Enzo</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="navegacion pt-3 ">
+      <div class="container-fluid">
+        <div class="row justify-content-between">
+          <div class="col-lg-2 col-md-2 logo">
+            <a href="{% url 'index' %}">
+              <p class="t-verde t700">Rengar<span class="text-uppercase t-rosado t800">Shop</span></p>
+            </a>
+          </div>
+          <div class="col-lg-2 col-md-2"></div>
+          <div class="col-lg-8 col-md-8 aling-self-center">
+            <ul class="nav justify-content-between">
+              <li><a class="t700 t-blanco text-decoration-none" href="{% url 'index' %}">Home</a></li>
+              <li><a class="t700 t-blanco text-decoration-none" href="{% url 'accounts' %}">Accounts</a></li>
+              <li><a class="t700 t-blanco text-decoration-none" href="{% url 'contact_us' %}">Contact Us</a></li>
+              <li><a class="t700 t-blanco text-decoration-none" href="#" data-bs-toggle="modal" data-bs-target="#cartModal">Shopping Cart</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    {% block content %}
+    {% endblock %}
+  </main>
+
+  <div class="footer">
+    <footer class="text-white mt-5">
+      <div class="container">
+        <div class="row py-4">
+          <p>&copy;2024 RengarShop. ALl rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="cartModalLabel">Shopping Cart</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="container">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th scope="col">Item</th>
+                  <th scope="col">Price</th>
+                  <th scope="col">Quantity</th>
+                  <th scope="col">Subtotal</th>
+                  <th scope="col">Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for item in cart_items %}
+                <tr>
+                  <td>{{ item.account.name }}</td>
+                  <td>${{ item.account.price }}</td>
+                  <td>{{ item.quantity }}</td>
+                  <td>${{ item.subtotal }}</td>
+                  <td>
+                    <form action="{% url 'remove_from_cart' item.id %}" method="post" class="d-inline">
+                      {% csrf_token %}
+                      <button type="submit" class="btn btn-danger btn-sm">Remove</button>
+                    </form>
+                  </td>
+                </tr>
+                {% empty %}
+                <tr>
+                  <td colspan="5">Your cart is empty</td>
+                </tr>
+                {% endfor %}
+                <tr>
+                  <td colspan="3" class="text-end">Total:</td>
+                  <td>${{ total }}</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <!-- Aquí puedes colocar un botón de Checkout u otras acciones -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JavaScript Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+    integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

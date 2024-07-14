@@ -1,0 +1,104 @@
+/*Colores Gobales Textos*/
+
+.t-morado {
+    color: #A997C8 !important;
+}
+
+.t-celeste{
+    color: #BCDEF1 !important;
+}
+
+.t-blanco{
+    color: #FFFFFF !important;
+}
+
+.t-verde{
+    color: #A3D2B9 !important;
+}
+
+.t-naranjo{
+    color: #d77e43 !important;
+}
+
+.t-rosado{
+    color: #E48CB5 !important;
+}
+
+/*Colores Globales Background*/
+
+.bg-morado {
+    color: #A997C8 !important;
+}
+
+.bg-celeste{
+    color: #BCDEF1 !important;
+}
+
+.bg-amarillo{
+    color: #EEEB90 !important;
+}
+
+.bg-verde{
+    color: #A3D2B9 !important;
+}
+
+.bg-naranjo{
+    color: #F2BF9D !important;
+}
+
+.bg-rosado{
+    color: #E48CB5 !important;
+}
+
+
+.logo{
+    font-size: 2rem;
+}
+
+
+.t100 {
+    font-weight: 100 !important;
+}
+.t200 {
+    font-weight: 200 !important;
+}
+.t300 {
+    font-weight: 300 !important;
+}
+.t400 {
+    font-weight: 400 !important;
+}
+.t500 {
+    font-weight: 500 !important;
+}
+.t600 {
+    font-weight: 600 !important;
+}
+.t700 {
+    font-weight: 700 !important;
+}
+.t800 {
+    font-weight: 800 !important;
+}
+
+div.topbar {
+    background-color:#0A0E3B;
+}
+
+div.footer {
+    background-color:#0A0E3B;
+}
+
+div.navegacion {
+    background-color: #1C79FF;
+}
+
+body {
+    background-color: #1C1F2C!important;
+}
+
+#1C1F2C
+
+footer {
+    background-color: #0A0E3B!important;
+}
