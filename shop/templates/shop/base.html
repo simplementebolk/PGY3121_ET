@@ -59,7 +59,7 @@
               <li><a class="t700 t-blanco text-decoration-none" href="{% url 'index' %}">Home</a></li>
               <li><a class="t700 t-blanco text-decoration-none" href="{% url 'accounts' %}">Accounts</a></li>
               <li><a class="t700 t-blanco text-decoration-none" href="{% url 'contact_us' %}">Contact Us</a></li>
-              <li><a class="t700 t-blanco text-decoration-none" href="#" data-bs-toggle="modal" data-bs-target="#cartModal">Shopping Cart</a></li>
+              <li><a class="t700 t-blanco text-decoration-none" href="{% url 'cart' %}">Shopping Cart</a></li>
             </ul>
           </div>
         </div>
@@ -81,63 +81,7 @@
       </div>
     </footer>
   </div>
-
-  <!-- Modal -->
-  <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="cartModalLabel">Shopping Cart</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <div class="container">
-            <table class="table table-striped">
-              <thead>
-                <tr>
-                  <th scope="col">Item</th>
-                  <th scope="col">Price</th>
-                  <th scope="col">Quantity</th>
-                  <th scope="col">Subtotal</th>
-                  <th scope="col">Actions</th>
-                </tr>
-              </thead>
-              <tbody>
-                {% for item in cart_items %}
-                <tr>
-                  <td>{{ item.account.name }}</td>
-                  <td>${{ item.account.price }}</td>
-                  <td>{{ item.quantity }}</td>
-                  <td>${{ item.subtotal }}</td>
-                  <td>
-                    <form action="{% url 'remove_from_cart' item.id %}" method="post" class="d-inline">
-                      {% csrf_token %}
-                      <button type="submit" class="btn btn-danger btn-sm">Remove</button>
-                    </form>
-                  </td>
-                </tr>
-                {% empty %}
-                <tr>
-                  <td colspan="5">Your cart is empty</td>
-                </tr>
-                {% endfor %}
-                <tr>
-                  <td colspan="3" class="text-end">Total:</td>
-                  <td>${{ total }}</td>
-                  <td></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <!-- Aquí puedes colocar un botón de Checkout u otras acciones -->
-        </div>
-      </div>
-    </div>
-  </div>
-
+  
   <!-- Bootstrap JavaScript Libraries -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
     integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
