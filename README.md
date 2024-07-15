@@ -24,7 +24,7 @@ Pasos para usar el proyecto:
 
 4. Instalar los requerimientos:
    
-   pip install -r requirements.txt
+   pip install -r .\requirements.txt
 
 6. Correr el proyecto:
    
